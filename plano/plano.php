@@ -1,7 +1,18 @@
 <?php
-// Ler o JSON
-$arquivo = 'plano.json';
-$planos = json_decode(file_get_contents($arquivo), true);
+// Caminho do arquivo JSON
+$arquivo = $arquivo = '../planos/plano.json';
+$planos = [];
+
+// Verifica se o arquivo existe antes de ler
+if(file_exists($arquivo)) {
+    $json = file_get_contents($arquivo);
+    $planos = json_decode($json, true);
+
+    // Se o JSON estiver vazio ou inválido, cria array vazio
+    if(!is_array($planos)) {
+        $planos = [];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,10 +21,11 @@ $planos = json_decode(file_get_contents($arquivo), true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planos - Vortex Academy</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="planos.css"> <!-- seu CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">Vortex</div>
         <nav>
@@ -26,6 +38,7 @@ $planos = json_decode(file_get_contents($arquivo), true);
         </nav>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <h1>Planos da Academia</h1>
@@ -34,21 +47,23 @@ $planos = json_decode(file_get_contents($arquivo), true);
         </div>
     </section>
 
-    <section class="features">
-        <?php if (!empty($planos)): ?>
-            <?php foreach($planos as $index => $plano): ?>
+    <!-- Planos -->
+    <main class="features">
+        <?php if(!empty($planos)): ?>
+            <?php foreach($planos as $plano): ?>
                 <div class="feature">
-                    <h2><?= $plano['nome'] ?></h2>
-                    <p><?= $plano['descricao'] ?></p>
-                    <p><strong>Preço:</strong> R$ <?= $plano['preco'] ?></p>
-                    <p><strong>Duração:</strong> <?= $plano['duracao'] ?> mês(es)</p>
+                    <h2><?= htmlspecialchars($plano['nome']) ?></h2>
+                    <p><?= htmlspecialchars($plano['descricao']) ?></p>
+                    <p><strong>Preço:</strong> R$ <?= number_format($plano['preco'], 2, ',', '.') ?></p>
+                    <p><strong>Duração:</strong> <?= (int)$plano['duracao'] ?> mês(es)</p>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p>Nenhum plano cadastrado ainda.</p>
+            <p style="text-align:center; color:#ccc; margin:20px;">Nenhum plano cadastrado ainda.</p>
         <?php endif; ?>
-    </section>
+    </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Vortex Academy. Todos os direitos reservados.</p>
     </footer>

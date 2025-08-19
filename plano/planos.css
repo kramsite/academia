@@ -1,0 +1,50 @@
+/* Reaproveita cores e fontes do CSS base */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+.plano-card {
+    background: #1a0026; /* card roxo escuro */
+    border: 1px solid #4b4bff; /* borda com LED */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 0 15px#4b4bff;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.plano-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px#2e0a6f, 0 0 60px #7b4bff;
+}
+
+.plano-card h2 {
+    color: #4b4fff;
+    margin-bottom: 20px;
+}
+
+.plano-card p {
+    color: #ccc;
+    margin: 8px 0;
+}
+
+.plano-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #4b4fff;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 15px #4b4fff;
+    transition: 0.3s;
+}
+
+.plano-card .btn:hover {
+    background-color: #6c6cff;
+    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
+}
