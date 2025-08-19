@@ -1,9 +1,11 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #0d0d0d;
@@ -14,14 +16,17 @@ body {
     height: 100vh;
 }
 
+/* Container principal */
 .login-container {
     position: relative;
-    width: 350px;
+    width: 800px;
+    max-width: 95%;
 }
 
+/* Caixa de cadastro */
 .login-box {
     background: #1a0026;
-    padding: 40px 30px;
+    padding: 40px;
     border-radius: 15px;
     border: 1px solid #4b4fff;
     box-shadow: 0 0 30px #4b4fff, 0 0 60px #2e0a6f;
@@ -30,14 +35,37 @@ body {
     text-align: center;
 }
 
+/* Título */
 .login-box h1 {
     color: #4b4fff;
     margin-bottom: 30px;
     text-shadow: 0 0 10px #4b4fff, 0 0 20px #2e0a6f;
 }
 
-.input-group {
+/* Mensagem de sucesso ou erro */
+.mensagem {
     margin-bottom: 20px;
+    color: #4bffef;
+    font-weight: bold;
+    text-shadow: 0 0 10px #4bffef;
+}
+
+/* Layout de colunas do formulário */
+.form-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Colunas esquerda/direita */
+.column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Grupo de input */
+.input-group {
+    margin-bottom: 15px;
     text-align: left;
 }
 
@@ -65,6 +93,91 @@ body {
     box-shadow: 0 0 20px #4b4fff inset;
 }
 
+/* Validação de campos */
+.input-group input.valido {
+    border-color: #9b8cff;
+    box-shadow: 0 0 20px #9b8cff;
+    color: #fff;
+}
+
+.input-group input.invalido {
+    border-color: #ff3333;
+    box-shadow: 0 0 20px #ff3333;
+    color: #fff;
+}
+
+/* Input full-width (senha) */
+.input-group.full-width {
+    width: 100%;
+}
+
+/* Garante que as colunas de senha fiquem lado a lado */
+.form-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Cada coluna ocupa metade do espaço disponível */
+.column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Campo select (Sexo) */
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #4b4fff;
+    background: #0d001a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px #2e0a6f inset;
+    transition: 0.3s;
+    -webkit-appearance: none; /* Remove setinha padrão */
+    appearance: none;
+    cursor: pointer;
+}
+
+.input-group select:focus {
+    border-color: #6c6cff;
+    box-shadow: 0 0 20px #4b4fff inset;
+}
+
+/* Validação do select */
+.input-group select.valido {
+    border-color: #9b8cff;
+    box-shadow: 0 0 20px #9b8cff;
+    color: #fff;
+}
+
+.input-group select.invalido {
+    border-color: #ff3333;
+    box-shadow: 0 0 20px #ff3333;
+    color: #fff;
+}
+
+/* Adiciona setinha personalizada para o select (opcional) */
+.input-group select::-ms-expand {
+    display: none;
+}
+
+/* Linha separadora futurista */
+hr.separador {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(75,76,255,0) 0%, #4b4fff 50%, rgba(75,76,255,0) 100%);
+    margin: 30px 0;
+    box-shadow: 0 0 10px #4b4fff, 0 0 20px #2e0a6f;
+    border-radius: 1px;
+}
+
+
+
+
+/* Botão */
 .btn {
     width: 100%;
     padding: 15px;
@@ -83,9 +196,11 @@ body {
     box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
 }
 
+/* Link de login */
 .signup {
     margin-top: 20px;
     color: #aaa;
+    text-align: center;
 }
 
 .signup a {
@@ -98,26 +213,27 @@ body {
     text-shadow: 0 0 10px #4b4fff;
 }
 
+/* LED de fundo */
 .led-glow {
     position: absolute;
     top: -50px;
     left: -50px;
-    width: 450px;
-    height: 450px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(75,76,255,0.3) 0%, transparent 70%);
     z-index: 1;
     animation: pulse 4s infinite;
 }
 
+/* Animação pulse */
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.2); opacity: 1; }
-}
-
-.mensagem {
-    margin-bottom: 20px;
-    color: #4bffef;
-    font-weight: bold;
-    text-shadow: 0 0 10px #4bffef;
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
 }
