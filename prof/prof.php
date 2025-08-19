@@ -66,7 +66,7 @@
                 <!-- Professor 2 -->
                 <div class="card-professor" data-categoria="yoga">
                     <div class="card-imagem">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Professora Ana">
+                        <img src="" alt="Professora Ana">
                     </div>
                     <div class="card-conteudo">
                         <h3>Ana Silva</h3>
@@ -108,7 +108,7 @@
                 <!-- Professor 3 -->
                 <div class="card-professor" data-categoria="pilates">
                     <div class="card-imagem">
-                        <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Professora Juliana">
+                        <img src="" alt="Professora Juliana">
                     </div>
                     <div class="card-conteudo">
                         <h3>Juliana Martins</h3>
