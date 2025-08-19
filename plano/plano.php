@@ -1,17 +1,11 @@
 <?php
-// Caminho do arquivo JSON
-$arquivo = $arquivo = '../planos/plano.json';
+$arquivo = 'plano.json';
 $planos = [];
 
-// Verifica se o arquivo existe antes de ler
 if(file_exists($arquivo)) {
     $json = file_get_contents($arquivo);
     $planos = json_decode($json, true);
-
-    // Se o JSON estiver vazio ou inválido, cria array vazio
-    if(!is_array($planos)) {
-        $planos = [];
-    }
+    if(!is_array($planos)) $planos = [];
 }
 ?>
 
@@ -21,11 +15,10 @@ if(file_exists($arquivo)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planos - Vortex Academy</title>
-    <link rel="stylesheet" href="planos.css"> <!-- seu CSS -->
+    <link rel="stylesheet" href="planos.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="logo">Vortex</div>
         <nav>
@@ -38,34 +31,29 @@ if(file_exists($arquivo)) {
         </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Planos da Academia</h1>
-            <p>Escolha o plano que combina com você!</p>
-            <a href="adicionar_plano.php" class="btn">Adicionar Plano</a>
-        </div>
+        <h1>PLANOS DE TREINAMENTO</h1>
+        <p>com Personal Trainer</p>
     </section>
 
-    <!-- Planos -->
-    <main class="features">
-        <?php if(!empty($planos)): ?>
-            <?php foreach($planos as $plano): ?>
-                <div class="feature">
-                    <h2><?= htmlspecialchars($plano['nome']) ?></h2>
-                    <p><?= htmlspecialchars($plano['descricao']) ?></p>
-                    <p><strong>Preço:</strong> R$ <?= number_format($plano['preco'], 2, ',', '.') ?></p>
-                    <p><strong>Duração:</strong> <?= (int)$plano['duracao'] ?> mês(es)</p>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p style="text-align:center; color:#ccc; margin:20px;">Nenhum plano cadastrado ainda.</p>
-        <?php endif; ?>
+    <main class="planos-container">
+        <?php foreach($planos as $plano): ?>
+            <div class="plano-card">
+                <h2><?= htmlspecialchars($plano['nome']) ?></h2>
+                <div class="preco">R$ <?= number_format($plano['preco'], 2, ',', '.') ?></div>
+                <ul>
+                    <?php foreach($plano['descricao'] as $item): ?>
+                        <li><?= htmlspecialchars($item) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <a href="#" class="btn">Escolher Plano</a>
+            </div>
+        <?php endforeach; ?>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Vortex Academy. Todos os direitos reservados.</p>
+        <p>Escolha o plano ideal pra você e comece a treinar!</p>
+        <p>📞 (65)99313-7382 | ✉️ @xxxxxxx</p>
     </footer>
 </body>
 </html>

@@ -1,50 +1,129 @@
-/* Reaproveita cores e fontes do CSS base */
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #0d0d0d;
     color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #1a0033;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #9b8cff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4b4fff;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #1a0033, #0d001a);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #9b8cff;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+/* Cards dos planos */
+.planos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 10px;
+    gap: 20px;
 }
 
 .plano-card {
-    background: #1a0026; /* card roxo escuro */
-    border: 1px solid #4b4bff; /* borda com LED */
+    background: #1a0026;
+    border: 2px solid #4b4fff;
     border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 400px;
-    box-shadow: 0 0 15px#4b4bff;
+    width: 250px;
     text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 15px #2e0a6f;
     transition: 0.3s;
 }
 
 .plano-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 30px#2e0a6f, 0 0 60px #7b4bff;
+    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
 }
 
 .plano-card h2 {
     color: #4b4fff;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.plano-card p {
+.plano-card .preco {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.plano-card ul {
+    list-style: none;
+    padding: 0;
     color: #ccc;
-    margin: 8px 0;
+    text-align: left;
+}
+
+.plano-card ul li::before {
+    content: "• ";
+    color: #4b4fff;
 }
 
 .plano-card .btn {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 20px;
     color: #fff;
     background-color: #4b4fff;
     border-radius: 10px;
     text-decoration: none;
-    box-shadow: 0 0 15px #4b4fff;
     transition: 0.3s;
 }
 
 .plano-card .btn:hover {
     background-color: #6c6cff;
-    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
 }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a0033;
+    color: #ccc;
+}
+s
