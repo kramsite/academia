@@ -1,0 +1,124 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d; /* Preto profundo */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container do login */
+.login-container {
+    position: relative;
+    width: 350px;
+}
+
+/* Caixa de login */
+.login-box {
+    background: #1a0026;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid #4b4fff; /* LED borda */
+    box-shadow: 0 0 30px #4b4fff, 0 0 60px #2e0a6f;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Título */
+.login-box h1 {
+    color: #4b4fff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #4b4fff, 0 0 20px #2e0a6f;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #4b4fff;
+    background: #0d001a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px #2e0a6f inset;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #6c6cff;
+    box-shadow: 0 0 20px #4b4fff inset;
+}
+
+/* Botão */
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4b4fff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #4b4fff, 0 0 30px #2e0a6f;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #6c6cff;
+    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
+}
+
+/* Link de cadastro */
+.signup {
+    margin-top: 20px;
+    color: #aaa;
+}
+
+.signup a {
+    color: #4b4fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.signup a:hover {
+    text-shadow: 0 0 10px #4b4fff;
+}
+
+/* LED fundo estratégico */
+.led-glow {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(75,76,255,0.3) 0%, transparent 70%);
+    z-index: 1;
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
