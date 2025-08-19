@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia FitLife - Modalidades</title>
+    <title>Academia  - Modalidades</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Reset e estilos base */
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d; /* preto mais profundo */
+            color: #fff;
             line-height: 1.6;
         }
         
@@ -29,30 +30,29 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            padding: 1.2rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(90deg, #2e0a6f, #1a0033); /* roxo frio */
+            box-shadow: 0 0 15px #2e0a6f;
             position: sticky;
             top: 0;
             z-index: 100;
         }
         
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
         .logo {
             font-size: 2rem;
+            letter-spacing: 2px;
+            color: #9b8cff; /* roxo frio claro */
+            text-shadow: 0 0 10px #9b8cff;
             font-weight: 800;
-            letter-spacing: 0.5px;
         }
         
         .logo span {
-            color: #e74c3c;
+            color: #4b4fff;
             font-weight: 900;
+            text-shadow: 0 0 15px #4b4fff;
         }
         
         nav ul {
@@ -61,29 +61,43 @@
         }
         
         nav ul li {
-            margin-left: 1.8rem;
+            margin-left: 30px;
         }
         
         nav ul li a {
-            color: white;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+            color: #ccc;
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
             padding: 0.6rem 1rem;
             border-radius: 6px;
             font-size: 1.05rem;
         }
         
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #9b8cff;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
         nav ul li a:hover {
-            color: #3498db;
-            background-color: white;
+            color: #9b8cff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         /* Banner */
         .banner {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(13, 0, 26, 0.85), rgba(13, 0, 26, 0.9)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -91,6 +105,27 @@
             padding: 6rem 1.5rem;
             margin-bottom: 3rem;
             border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 0 60px #4b4fff, 0 0 120px #4b4fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
         }
         
         .banner h2 {
@@ -98,6 +133,10 @@
             margin-bottom: 1.2rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
             letter-spacing: 0.5px;
+            color: #9b8cff;
+            text-shadow: 0 0 15px #9b8cff, 0 0 30px #4b4fff;
+            position: relative;
+            z-index: 2;
         }
         
         .banner p {
@@ -105,6 +144,9 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.8;
+            color: #aaa;
+            position: relative;
+            z-index: 2;
         }
         
         /* Modalidades */
@@ -116,10 +158,11 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            color: #9b8cff;
             position: relative;
             padding-bottom: 1rem;
             font-weight: 800;
+            text-shadow: 0 0 10px #9b8cff;
         }
         
         .section-title::after {
@@ -130,8 +173,9 @@
             transform: translateX(-50%);
             width: 150px;
             height: 5px;
-            background: linear-gradient(90deg, #3498db, #e74c3c);
+            background: linear-gradient(90deg, #4b4fff, #9b8cff);
             border-radius: 3px;
+            box-shadow: 0 0 10px #4b4fff;
         }
         
         .grid-modalidades {
@@ -141,17 +185,17 @@
         }
         
         .card-modalidade {
-            background: white;
+            background: #1a0026;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 20px rgba(43, 10, 111, 0.3);
             transition: all 0.4s ease;
-            border: 1px solid #eaeaea;
+            border: 1px solid #4b4fff;
         }
         
         .card-modalidade:hover {
             transform: translateY(-12px);
-            box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+            box-shadow: 0 18px 35px rgba(75, 79, 255, 0.4), 0 0 30px #4b4fff;
         }
         
         .card-imagem {
@@ -178,36 +222,37 @@
         .card-conteudo h3 {
             font-size: 1.7rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: #9b8cff;
             font-weight: 700;
+            text-shadow: 0 0 8px #9b8cff;
         }
         
         .card-conteudo p {
             margin-bottom: 1.5rem;
-            color: #555;
+            color: #ccc;
             line-height: 1.7;
             font-size: 1.05rem;
         }
         
         .horarios {
             margin-bottom: 2rem;
-            background: #f9f9f9;
+            background: rgba(27, 0, 51, 0.5);
             padding: 1.2rem;
             border-radius: 10px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #4b4fff;
         }
         
         .horarios h4 {
             font-size: 1.15rem;
             margin-bottom: 0.8rem;
-            color: #2c3e50;
+            color: #9b8cff;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
         .horarios h4 i {
-            color: #3498db;
+            color: #4b4fff;
         }
         
         .horarios ul {
@@ -217,10 +262,11 @@
         .horarios ul li {
             padding: 0.4rem 0;
             font-size: 1rem;
-            border-bottom: 1px dashed #eee;
+            border-bottom: 1px dashed #333;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: #ccc;
         }
         
         .horarios ul li:last-child {
@@ -228,31 +274,32 @@
         }
         
         .horarios ul li i {
-            color: #e74c3c;
+            color: #4b4fff;
             font-size: 0.9rem;
         }
         
         .btn {
             display: inline-block;
-            background: linear-gradient(90deg, #3498db, #2980b9);
+            background: linear-gradient(90deg, #4b4fff, #2e0a6f);
             color: white;
             padding: 0.9rem 1.8rem;
             text-decoration: none;
             border-radius: 35px;
             font-weight: 700;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.35);
+            box-shadow: 0 5px 15px rgba(75, 79, 255, 0.35);
             cursor: pointer;
             border: none;
             font-size: 1.05rem;
             letter-spacing: 0.5px;
             width: 100%;
             text-align: center;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .btn:hover {
-            background: linear-gradient(90deg, #2980b9, #3498db);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.5);
+            background: linear-gradient(90deg, #2e0a6f, #4b4fff);
+            box-shadow: 0 8px 20px rgba(75, 79, 255, 0.6), 0 0 20px #4b4fff;
             transform: translateY(-3px);
         }
         
@@ -264,20 +311,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.85);
+            background-color: rgba(13, 0, 26, 0.95);
             z-index: 1000;
             overflow-y: auto;
             padding: 25px;
         }
         
         .modal-conteudo {
-            background-color: white;
+            background-color: #1a0026;
             margin: 2.5rem auto;
             border-radius: 15px;
             max-width: 900px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 35px rgba(75, 79, 255, 0.3);
             animation: modalFadeIn 0.5s;
             overflow: hidden;
+            border: 1px solid #4b4fff;
         }
         
         @keyframes modalFadeIn {
@@ -287,7 +335,7 @@
         
         .modal-header {
             padding: 2rem;
-            background: linear-gradient(90deg, #3498db, #2980b9);
+            background: linear-gradient(90deg, #4b4fff, #2e0a6f);
             color: white;
             display: flex;
             justify-content: space-between;
@@ -300,6 +348,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
         
         .fechar {
@@ -312,7 +361,7 @@
         }
         
         .fechar:hover {
-            color: #e74c3c;
+            color: #9b8cff;
             transform: scale(1.2);
         }
         
@@ -330,18 +379,19 @@
         .modal-info h3 {
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: #9b8cff;
+            border-bottom: 3px solid #4b4fff;
             padding-bottom: 0.7rem;
             font-weight: 700;
+            text-shadow: 0 0 8px #9b8cff;
         }
         
         .info-box {
-            background-color: #f8f9fa;
+            background-color: rgba(27, 0, 51, 0.5);
             padding: 1.5rem;
             border-radius: 12px;
-            border-left: 5px solid #3498db;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid #4b4fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         
         .info-box ul {
@@ -354,10 +404,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: #ccc;
         }
         
         .info-box ul li i {
-            color: #27ae60;
+            color: #4b4fff;
             font-size: 1.1rem;
         }
         
@@ -365,10 +416,11 @@
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
-            background: white;
+            background: rgba(27, 0, 51, 0.3);
             padding: 1.2rem;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid #333;
         }
         
         .professor img {
@@ -377,18 +429,19 @@
             border-radius: 50%;
             object-fit: cover;
             margin-right: 1.5rem;
-            border: 3px solid #3498db;
+            border: 3px solid #4b4fff;
+            box-shadow: 0 0 10px #4b4fff;
         }
         
         .professor-info h4 {
             font-size: 1.3rem;
             margin-bottom: 0.3rem;
-            color: #2c3e50;
+            color: #9b8cff;
         }
         
         .professor-info p {
             font-size: 1rem;
-            color: #666;
+            color: #ccc;
         }
         
         /* Formulário */
@@ -400,7 +453,7 @@
             display: block;
             margin-bottom: 0.7rem;
             font-weight: 600;
-            color: #2c3e50;
+            color: #9b8cff;
             font-size: 1.1rem;
         }
         
@@ -409,18 +462,21 @@
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #ddd;
+            border: 2px solid #333;
             border-radius: 8px;
             font-size: 1.05rem;
             transition: all 0.3s;
+            background-color: rgba(27, 0, 51, 0.3);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3498db;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            border-color: #4b4fff;
+            box-shadow: 0 0 0 3px rgba(75, 79, 255, 0.2), 0 0 10px #4b4fff;
         }
         
         .form-grid {
@@ -431,18 +487,22 @@
         
         /* CTA */
         .cta {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #2e0a6f, #1a0033);
             color: white;
             text-align: center;
             padding: 5rem 0;
             margin-top: 4rem;
             border-radius: 20px 20px 0 0;
+            border-top: 1px solid #4b4fff;
+            box-shadow: 0 0 20px #2e0a6f;
         }
         
         .cta h2 {
             font-size: 2.3rem;
             margin-bottom: 1.5rem;
             font-weight: 800;
+            color: #9b8cff;
+            text-shadow: 0 0 15px #9b8cff;
         }
         
         .cta p {
@@ -450,26 +510,29 @@
             margin: 0 auto 2.5rem;
             font-size: 1.25rem;
             line-height: 1.8;
+            color: #ccc;
         }
         
         .btn-grande {
             padding: 1.2rem 2.5rem;
             font-size: 1.2rem;
-            background: linear-gradient(90deg, #2c3e50, #34495e);
+            background: linear-gradient(90deg, #1a0033, #2e0a6f);
+            box-shadow: 0 0 20px #2e0a6f;
         }
         
         .btn-grande:hover {
-            background: linear-gradient(90deg, #34495e, #2c3e50);
+            background: linear-gradient(90deg, #2e0a6f, #1a0033);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
         }
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: white;
+            background-color: #0d001a;
+            color: #666;
             text-align: center;
             padding: 2.5rem 0;
+            border-top: 1px solid #2e0a6f;
         }
         
         /* Responsividade */
@@ -481,10 +544,11 @@
         }
         
         @media (max-width: 768px) {
-            header .container {
+            header {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
+                padding: 15px;
             }
             
             nav ul {
@@ -544,22 +608,25 @@
             .banner {
                 padding: 4rem 1rem;
             }
+            
+            .banner::before {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">Academia <span>FitLife</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fas fa-dumbbell"></i> Modalidades</a></li>
-                    <li><a href="#"><i class="fas fa-tag"></i> Planos</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i> Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">Academy <span>Vortex</span></div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-dumbbell"></i> Modalidades</a></li>
+                <li><a href="#"><i class="fas fa-tag"></i> Planos</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i> Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="banner">
@@ -720,6 +787,106 @@
                     <div class="form-group">
                         <label for="observacao">Observações</label>
                         <textarea id="observacao" name="observacao" rows="3" placeholder="Informe se possui alguma condição de saúde específica ou experiência prévia com yoga"></textarea>
+                    </div>
+                    <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Inscrição</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pilates -->
+    <div id="modal-pilates" class="modal">
+        <div class="modal-conteudo">
+            <div class="modal-header">
+                <h2><i class="fas fa-spa"></i> Pilates</h2>
+                <span class="fechar">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <div class="info-box">
+                        <h3>Descrição</h3>
+                        <p>O Pilates é um método de exercício físico que se foca no controle dos músculos do core, melhorando a postura, flexibilidade e força muscular. Desenvolvido por Joseph Pilates, o método enfatiza o alinhamento postural, a respiração e a concentração.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Benefícios</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Melhora da postura e alinhamento corporal</li>
+                            <li><i class="fas fa-check-circle"></i> Aumento da flexibilidade e força muscular</li>
+                            <li><i class="fas fa-check-circle"></i> Desenvolvimento da consciência corporal</li>
+                            <li><i class="fas fa-check-circle"></i> Prevenção e reabilitação de lesões</li>
+                            <li><i class="fas fa-check-circle"></i> Redução do estresse e tensão muscular</li>
+                            <li><i class="fas fa-check-circle"></i> Melhora da coordenação e equilíbrio</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="modal-info">
+                    <div class="info-box">
+                        <h3><i class="far fa-clock"></i> Horários e Locais</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Segunda e Quarta</strong> - 10h às 11h (Sala 3 - Unidade Centro)</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Terça e Quinta</strong> - 19h às 20h (Sala 3 - Unidade Centro)</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>Sexta</strong> - 9h às 10h (Sala 2 - Unidade Jardins)</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Professores</h3>
+                        <div class="professor">
+                            <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professora">
+                            <div class="professor-info">
+                                <h4>Juliana Martins</h4>
+                                <p>Instrutora de Pilates com 8 anos de experiência, especializada em Pilates Solo e com Aparelhos.</p>
+                            </div>
+                        </div>
+                        <div class="professor">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professor">
+                            <div class="professor-info">
+                                <h4>Ricardo Almeida</h4>
+                                <p>Especialista em Pilates para reabilitação e preparação física, com formação internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3><i class="fas fa-edit"></i> Inscreva-se na Aula Experimental</h3>
+                <form id="form-pilates">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome-pilates">Nome completo</label>
+                            <input type="text" id="nome-pilates" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-pilates">E-mail</label>
+                            <input type="email" id="email-pilates" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="telefone-pilates">Telefone</label>
+                            <input type="tel" id="telefone-pilates" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="horario-pilates">Horário preferido</label>
+                            <select id="horario-pilates" name="horario" required>
+                                <option value="">Selecione um horário</option>
+                                <option value="segunda-quarta-10h">Segunda e Quarta - 10h às 11h</option>
+                                <option value="terca-quinta-19h">Terça e Quinta - 19h às 20h</option>
+                                <option value="sexta-9h">Sexta - 9h às 10h</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="experiencia-pilates">Nível de Experiência</label>
+                        <select id="experiencia-pilates" name="experiencia" required>
+                            <option value="">Selecione sua experiência</option>
+                            <option value="iniciante">Iniciante</option>
+                            <option value="intermediario">Intermediário</option>
+                            <option value="avancado">Avançado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="observacao-pilates">Observações</label>
+                        <textarea id="observacao-pilates" name="observacao" rows="3" placeholder="Informe se possui alguma condição de saúde específica ou lesão prévia"></textarea>
                     </div>
                     <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Inscrição</button>
                 </form>
