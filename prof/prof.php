@@ -502,6 +502,27 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Professor 2 -->
+                <div class="card-professor" data-categoria="yoga">
+                    <div class="card-imagem">
+                        <img src="professora.png" alt="Professora Ana">
+                    </div>
+                    <div class="card-conteudo">
+                        <h3>rafaella Gomes</h3>
+                        <span class="especialidade">Yoga e Meditação</span>
+                        <div class="experiencia">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>7 anos na FitLife</span>
+                        </div>
+                        <p>Instrutora de Yoga com 10 anos de experiência, especializada em Hatha e Vinyasa Yoga. Certificada internacionalmente em Yoga Terapêutico.</p>
+                        <div class="redes-sociais">
+                            <a href="#" class="rede-social"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="rede-social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="rede-social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Professor 3 -->
                 <div class="card-professor" data-categoria="pilates">
@@ -607,6 +628,8 @@
                         </div>
                     </div>
                 </div>
+
+                
                 
                 <!-- Professor 8 -->
                 <div class="card-professor" data-categoria="yoga">
