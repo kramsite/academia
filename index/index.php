@@ -24,7 +24,7 @@
         <div class="hero-content">
             <h1>Bem-vindo à Vortex</h1>
             <p>Transforme seu corpo. Supere seus limites.</p>
-            <a href="../login/login.php" class="btn">Comece Agora</a>
+            <a href="../inicio/inicio.php" class="btn">Comece Agora</a>
         </div>
     </section>
 
