@@ -3,36 +3,40 @@
     "nome": "BÁSICO",
     "preco": 300,
     "descricao": [
-      "Plano de treinos estruturado",
-      "Suporte online",
-      "Avaliação física inicial gratuita"
+      "Plano de treinos personalizado para iniciantes",
+      "Acesso ilimitado à academia",
+      "Suporte online via chat",
+      "Avaliação física inicial e acompanhamento mensal"
     ]
   },
   {
     "nome": "PREMIUM",
     "preco": 500,
     "descricao": [
-      "Plano de treinos estruturado",
-      "Consultoria quinzenal para ajustes",
-      "Suporte online"
+      "Treinos adaptados para ganho de massa e resistência",
+      "Consultoria quinzenal com personal trainer",
+      "Acesso a aulas em grupo (yoga, pilates, etc.)",
+      "Suporte via chat e videochamada"
     ]
   },
   {
     "nome": "VIP",
     "preco": 800,
     "descricao": [
-      "Treinos 100% personalizados",
-      "Acompanhamento semanal",
-      "Suporte VIP"
+      "Treinos 100% personalizados e acompanhamento diário",
+      "Sessões exclusivas com personal trainer",
+      "Acesso VIP a todas as áreas",
+      "Consultoria nutricional e avaliações físicas completas"
     ]
   },
   {
     "nome": "FAMILIAR",
-    "preco": null,
+    "preco": "valor variável",
     "descricao": [
-      "Ideal para casais, irmãos ou pais + filhos",
-      "Inclui acesso a todas as áreas da academia",
-      "Desconto em pacotes de personal"
+      "Planos customizados para toda a família",
+      "Acesso a todas as áreas e atividades da academia",
+      "Descontos para pacotes de personal trainer",
+      "Acompanhamento especial para idosos"
     ]
   }
 ]
