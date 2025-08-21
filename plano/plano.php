@@ -17,18 +17,16 @@ if(file_exists($arquivo)) {
     <title>Planos - Vortex Academy</title>
     <link rel="stylesheet" href="planos.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
         <div class="logo">Vortex</div>
         <nav>
             <ul>
-  <li><a href="//index.php">Início</a></li>
-  <li><a href="planos.php">Planos</a></li>
-  <li><a href="treinos.php">Treinos</a></li>
-  <li><a href="contato.php">Contato</a></li>
-
+              <li><a href="index.php">Início</a></li>
+              <li><a href="planos.php">Planos</a></li>
+              <li><a href="treinos.php">Treinos</a></li>
+              <li><a href="contato.php">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -58,8 +56,7 @@ if(file_exists($arquivo)) {
     </main>
 
     <footer>
-        <p>Escolha o plano ideal pra você e comece a treinar!</p>
-        <p>📞 (65)99313-7382 | ✉️ @xxxxxx</p>
+        <p>© 2025 Vortex Academy. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
