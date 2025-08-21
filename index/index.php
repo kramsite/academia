@@ -17,7 +17,7 @@
                 <li><a href="#">Horários</a></li>
                 <li><a href="#">Contato</a></li>
                 <li><a href="../academia-chat/chat.php">chat</a></li>
-                <li><a href="../plano/plano.php">chat</a></li>
+                <li><a href="../plano/plano.php">planos</a></li>
                 
             </ul>
         </nav>
