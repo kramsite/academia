@@ -1,6 +1,6 @@
 <?php
 $arquivo = 'plano.json';
-$planos = [];
+$planos= [];
 
 if(file_exists($arquivo)) {
     $json = file_get_contents($arquivo);
@@ -53,7 +53,7 @@ if(file_exists($arquivo)) {
 
     <footer>
         <p>Escolha o plano ideal pra você e comece a treinar!</p>
-        <p>📞 (65)99313-7382 | ✉️ @xxxxxxx</p>
+        <p>📞 (65)99313-7382 | ✉️ @xxxxxx</p>
     </footer>
 </body>
 </html>
