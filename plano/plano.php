@@ -23,10 +23,10 @@ if(file_exists($arquivo)) {
         <div class="logo">Vortex</div>
         <nav>
             <ul>
-              <li><a href="../index/index.php">Início</a></li>
-              <li><a href="planos.php">Planos</a></li>
-              <li><a href="treinos.php">Treinos</a></li>
-              <li><a href="contato.php">Contato</a></li>
+                <li><a href="../index/index.php">Início</a></li>
+                <li><a href="planos.php">Planos</a></li>
+                <li><a href="treinos.php">Treinos</a></li>
+                <li><a href="contato.php">Contato</a></li>
             </ul>
         </nav>
     </header>
