@@ -1,0 +1,38 @@
+[
+  {
+    "nome": "BÁSICO",
+    "preco": 300,
+    "descricao": [
+      "Plano de treinos estruturado",
+      "Suporte online",
+      "Avaliação física inicial gratuita"
+    ]
+  },
+  {
+    "nome": "PREMIUM",
+    "preco": 500,
+    "descricao": [
+      "Plano de treinos estruturado",
+      "Consultoria quinzenal para ajustes",
+      "Suporte online"
+    ]
+  },
+  {
+    "nome": "VIP",
+    "preco": 800,
+    "descricao": [
+      "Treinos 100% personalizados",
+      "Acompanhamento semanal",
+      "Suporte VIP"
+    ]
+  },
+  {
+    "nome": "FAMILIAR",
+    "preco": null,
+    "descricao": [
+      "Ideal para casais, irmãos ou pais + filhos",
+      "Inclui acesso a todas as áreas da academia",
+      "Desconto em pacotes de personal"
+    ]
+  }
+]

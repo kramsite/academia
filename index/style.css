@@ -1,3 +1,53 @@
+{
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #4b4fff;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #6c6cff;
+    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    background: #0d001a;
+}
+
+.feature {
+    width: 30%;
+    background: #1a0026;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #4b4fff; /* LED nas bordas */
+    box-shadow: 0 0 15px #2e0a6f;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
+}
+
+.feature h2 {
+    margin-bottom: 10px;
+    color: #4b4fff;
+    text-shadow: 0 0 10px #4b4fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0d001a;
+    color: #666;
+}
 /* Reset básico */
 * {
     margin: 0;
@@ -113,52 +163,3 @@ nav ul li a:hover::after {
     padding: 15px 30px;
     color: #fff;
     background-color: #4b4fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #4b4fff;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #6c6cff;
-    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
-}
-
-/* Features */
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 20px;
-    background: #0d001a;
-}
-
-.feature {
-    width: 30%;
-    background: #1a0026;
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px solid #4b4fff; /* LED nas bordas */
-    box-shadow: 0 0 15px #2e0a6f;
-    transition: 0.3s;
-    text-align: center;
-}
-
-.feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
-}
-
-.feature h2 {
-    margin-bottom: 10px;
-    color: #4b4fff;
-    text-shadow: 0 0 10px #4b4fff;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #0d001a;
-    color: #666;
-}
