@@ -12,10 +12,11 @@
         <div class="logo">Vortex</div>
         <nav>
             <ul>
-                <li><a href="#">Início</a></li>
+                <li><a href="../inicio/inicio.php">Início</a></li>
                 <li><a href="#">Treinos</a></li>
                 <li><a href="#">Horários</a></li>
                 <li><a href="#">Contato</a></li>
+                <li><a href="../academia-chat/chat.php">chat</a></li>
             </ul>
         </nav>
     </header>
@@ -24,7 +25,7 @@
         <div class="hero-content">
             <h1>Bem-vindo à Vortex</h1>
             <p>Transforme seu corpo. Supere seus limites.</p>
-            <a href="../inicio/inicio.php" class="btn">Comece Agora</a>
+            <a href="../login/login.php" class="btn">Comece Agora</a>
         </div>
     </section>
 
