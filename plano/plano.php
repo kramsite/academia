@@ -1,5 +1,5 @@
 <?php
-$arquivo = 'plano.json';
+$arquivo = '../json/plano.json';
 $planos= [];
 
 if(file_exists($arquivo)) {

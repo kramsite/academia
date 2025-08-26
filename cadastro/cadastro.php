@@ -26,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'cpf' => $cpf,
             'cep' => $cep,
             'endereco' => $endereco,
-            'numero' => $numero,
             'celular' => $celular,
             'nascimento' => $nascimento
         ];

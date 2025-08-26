@@ -1,0 +1,13 @@
+[
+    {
+        "nome": "Rafaella Gomes",
+        "email": "Rafaella@gmail.com",
+        "senha": "$2y$10$bgrPr7ml6xAe2bhKdqsB2e\/tc5eMw63uAGunWbgoZh\/3X2ffD\/FNi",
+        "sexo": "feminino",
+        "cpf": "092.976.821-38",
+        "cep": "00388-021",
+        "endereco": "Rua J",
+        "celular": "(65) 99313-7382",
+        "nascimento": "2008-09-22"
+    }
+]
