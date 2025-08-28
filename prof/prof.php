@@ -14,6 +14,7 @@
         <nav>
             <ul>
                 <li><a href="../inicio/inicio.php">Home <i class="fas fa-home"></i> </a></li>
+                <li><a href="../IA/ia.php">IA <i class="fas fa-robot"></i> </a></li>
                 <li><a href="../modalidade/modali.php">Modalidades <i class="fas fa-dumbbell"></i> </a></li>
                 <li><a href="../plano/plano.php">Planos <i class="fas fa-tag"></i> </a></li>
                 <li><a href="../quiz/quiz.php">Quiz <i class="fas fa-question"></i></a></li>

@@ -3,126 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Trainer Virtual</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <title>Academia  - Modalidades</title>
+    <link rel="stylesheet" href="ia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background-color: #0d0d0d;
-            color: #fff;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .chatbot-container {
-            width: 100%;
-            max-width: 500px;
-            background: #1a0026;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 8px 20px rgba(43, 10, 111, 0.3);
-            border: 1px solid #4b4fff;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .chatbot-header {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #9b8cff;
-            font-weight: 800;
-            text-shadow: 0 0 10px #9b8cff;
-        }
-
-        .chat-display {
-            background: #0d001a;
-            border-radius: 10px;
-            padding: 1rem;
-            height: 350px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 1rem;
-            border: 1px solid #2e0a6f;
-        }
-
-        .message {
-            max-width: 80%;
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            line-height: 1.5;
-        }
-
-        .ai-message {
-            background: linear-gradient(135deg, #2e0a6f, #1a0033);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-        }
-
-        .user-message {
-            background: linear-gradient(135deg, #4b4fff, #2e0a6f);
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-        }
-
-        .input-area {
-            display: flex;
-            gap: 10px;
-        }
-
-        .user-input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border-radius: 20px;
-            border: none;
-            background: #0d001a;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-            border: 1px solid #4b4fff;
-            outline: none;
-        }
-
-        .send-button {
-            padding: 0.8rem 1.2rem;
-            border-radius: 20px;
-            border: none;
-            background: linear-gradient(135deg, #4b4fff, #2e0a6f);
-            color: white;
-            cursor: pointer;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            transition: all 0.3s;
-            outline: none;
-        }
-
-        .send-button:hover {
-            background: linear-gradient(135deg, #2e0a6f, #4b4fff);
-            box-shadow: 0 0 10px #4b4fff;
-        }
-
-        .typing-indicator {
-            display: none;
-            color: #9b8cff;
-            font-style: italic;
-            margin-top: 10px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
+       
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Vortex</div>
+        <nav>
+            <ul>
+                <li><a href="../inicio/inicio.php">Home <i class="fas fa-home"></i> </a></li>
+                <li><a href="../modalidade/modali.php">Modalidades <i class="fas fa-dumbbell"></i> </a></li>
+                <li><a href="../plano/plano.php">Planos <i class="fas fa-tag"></i> </a></li>
+                <li><a href="../prof/prof.php">Professores <i class="fas fa-chalkboard-teacher"></i> </a></li>
+                <li><a href="../quiz/quiz.php">Quiz <i class="fas fa-question"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="chatbot-wrapper">
     <div class="chatbot-container">
         <div class="chatbot-header">FitTech Personal Trainer</div>
         
@@ -137,6 +39,7 @@
         
         <div class="typing-indicator" id="typing-indicator">FitTech Personal Trainer está digitando...</div>
     </div>
+</div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

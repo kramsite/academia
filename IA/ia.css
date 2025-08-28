@@ -1,0 +1,193 @@
+ /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d; /* preto mais profundo */
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(90deg, #2e0a6f, #1a0033); /* roxo frio */
+            box-shadow: 0 0 15px #2e0a6f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #9b8cff; /* roxo frio claro */
+            text-shadow: 0 0 10px #9b8cff;
+            font-weight: 800;
+        }
+        
+        .logo span {
+            color: #4b4fff;
+            font-weight: 900;
+            text-shadow: 0 0 15px #4b4fff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 1.05rem;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #9b8cff;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: #9b8cff;
+            transform: translateY(-2px);
+        }
+        
+        .chatbot-container {
+            width: 100%;
+            max-width: 500px;
+            background: #1a0026;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(43, 10, 111, 0.3);
+            border: 1px solid #4b4fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbot-header {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #9b8cff;
+            font-weight: 800;
+            text-shadow: 0 0 10px #9b8cff;
+        }
+
+        .chat-display {
+            background: #0d001a;
+            border-radius: 10px;
+            padding: 1rem;
+            height: 350px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #2e0a6f;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            line-height: 1.5;
+        }
+
+        .ai-message {
+            background: linear-gradient(135deg, #2e0a6f, #1a0033);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #4b4fff, #2e0a6f);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .user-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border-radius: 20px;
+            border: none;
+            background: #0d001a;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            border: 1px solid #4b4fff;
+            outline: none;
+        }
+
+        .send-button {
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            border: none;
+            background: linear-gradient(135deg, #4b4fff, #2e0a6f);
+            color: white;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .send-button:hover {
+            background: linear-gradient(135deg, #2e0a6f, #4b4fff);
+            box-shadow: 0 0 10px #4b4fff;
+        }
+
+        .typing-indicator {
+            display: none;
+            color: #9b8cff;
+            font-style: italic;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Container centralizador */
+        .chatbot-wrapper {
+            display: flex;
+            justify-content: center; /* centraliza horizontalmente */
+            align-items: center;     /* centraliza verticalmente */
+            height: 100vh;           /* ocupa toda a altura da tela */
+            background-color: #0d0d0d; /* mantém o fundo do body */
+        }

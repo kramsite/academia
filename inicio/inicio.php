@@ -16,6 +16,7 @@
         <div class="logo">Vortex</div>
         <nav>
             <ul>
+                <li><a href="../IA/ia.php">IA <i class="fas fa-robot"></i> </a></li>
                 <li><a href="../modalidade/modali.php">Modalidades <i class="fas fa-dumbbell"></i> </a></li>
                 <li><a href="../plano/plano.php">Planos <i class="fas fa-tag"></i> </a></li>
                 <li><a href="../prof/prof.php">Professores <i class="fas fa-chalkboard-teacher"></i> </a></li>

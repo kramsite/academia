@@ -32,6 +32,7 @@ $planosSem = array_filter($planos, fn($p) => $p['tipo'] === 'sem');
         <nav>
             <ul>
                 <li><a href="../inicio/inicio.php">Home <i class="fas fa-dumbbell"></i> </a></li>
+                <li><a href="../IA/ia.php">IA <i class="fas fa-robot"></i> </a></li>
                 <li><a href="../modalidade/modali.php">Modalidades <i class="fas fa-dumbbell"></i> </a></li>
                 <li><a href="../prof/prof.php">Professores <i class="fas fa-chalkboard-teacher"></i> </a></li>
                 <li><a href="../quiz/quiz.php">Quiz <i class="fas fa-question"></i></a></li>
