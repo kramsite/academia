@@ -10,17 +10,17 @@
 </head>
 <body>
     <header>
-        <div class="logo">Academy <span>Vortex</span></div>
+        <div class="logo">Vortex</div>
         <nav>
             <ul>
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-dumbbell"></i> Modalidades</a></li>
-                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
-                <li><a href="#"><i class="fas fa-tag"></i> Planos</a></li>
-                <li><a href="#"><i class="fas fa-phone"></i> Contato</a></li>
+                <li><a href="../inicio/inicio.php">Home <i class="fas fa-home"></i> </a></li>
+                <li><a href="../modalidade/modali.php">Modalidades <i class="fas fa-dumbbell"></i> </a></li>
+                <li><a href="../plano/plano.php">Planos <i class="fas fa-tag"></i> </a></li>
+                <li><a href="../quiz/quiz.php">Quiz <i class="fas fa-question"></i></a></li>
             </ul>
         </nav>
     </header>
+
 
     <section class="banner">
         <div class="container">
