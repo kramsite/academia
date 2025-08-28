@@ -1,9 +1,91 @@
-* {
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: 0.3s;
-}
+ /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d; /* preto mais profundo */
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(90deg, #2e0a6f, #1a0033); /* roxo frio */
+            box-shadow: 0 0 15px #2e0a6f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #9b8cff; /* roxo frio claro */
+            text-shadow: 0 0 10px #9b8cff;
+            font-weight: 800;
+        }
+        
+        .logo span {
+            color: #4b4fff;
+            font-weight: 900;
+            text-shadow: 0 0 15px #4b4fff;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 1.05rem;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #9b8cff;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: #9b8cff;
+            transform: translateY(-2px);
+        }
+
 
 .btn:hover {
     background-color: #6c6cff;
@@ -46,62 +128,6 @@ footer {
     padding: 20px;
     background: #0d001a;
     color: #666;
-}
-/* Reset básico */
-
-body {
-    font-family: 'Orbitron', sans-serif;
-    background-color: #0d0d0d; /* preto mais profundo */
-    color: #fff;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: linear-gradient(90deg, #2e0a6f, #1a0033); /* roxo frio */
-    box-shadow: 0 0 15px #2e0a6f;
-}
-
-.logo {
-    font-size: 2rem;
-    letter-spacing: 2px;
-    color: #9b8cff; /* roxo frio claro */
-    text-shadow: 0 0 10px #9b8cff;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ccc;
-    font-weight: bold;
-    transition: 0.3s;
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #9b8cff;
-    bottom: -4px;
-    left: 0;
-    transition: width 0.3s;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
 }
 
 /* Hero */
