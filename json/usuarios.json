@@ -1,0 +1,24 @@
+[
+    {
+        "nome": "ralley conceicao",
+        "email": "aaacra7@gmal.com",
+        "senha": "$2y$10$.GSlSm8R.e2WuenLQXSAk.JtavjcrJKVH216Vj9jMrCKIuZzYQFzm",
+        "sexo": "masculino",
+        "cpf": "444.444.444-44",
+        "cep": "55555-555",
+        "endereco": "555555",
+        "celular": "(65) 78888-8888",
+        "nascimento": "2025-08-05"
+    },
+    {
+        "nome": "ara",
+        "email": "a@gmail.com",
+        "senha": "$2y$10$\/97hjD7IQnXwf\/BLpI\/XfO7blClGwyk8C73T7RYGDKwwb9vRgXTFC",
+        "sexo": "outro",
+        "cpf": "666.666.666-66",
+        "cep": "66666-666",
+        "endereco": "666666",
+        "celular": "(77) 77777-7777",
+        "nascimento": "2005-04-03"
+    }
+]
