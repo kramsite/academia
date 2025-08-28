@@ -1,24 +1,46 @@
+ /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+/* Body */
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #0d0d0d;
     color: #fff;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding-top: 80px; /* altura do header */
 }
 
+
 header {
+    position: fixed; /* mantém fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* sempre acima de tudo */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: #1a0033;
+    background: linear-gradient(90deg, #2e0a6f, #1a0033);
+    box-shadow: 0 0 15px #2e0a6f;
 }
 
-header .logo {
+
+/* Logo */
+.logo {
     font-size: 2rem;
+    letter-spacing: 2px;
     color: #9b8cff;
+    text-shadow: 0 0 10px #9b8cff;
+    font-weight: 800;
 }
 
+/* Navegação */
 nav ul {
     display: flex;
     list-style: none;
@@ -32,98 +54,285 @@ nav ul li a {
     text-decoration: none;
     color: #ccc;
     font-weight: bold;
+    position: relative;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 1.05rem;
     transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #9b8cff;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 nav ul li a:hover {
-    color: #4b4fff;
+    color: #9b8cff;
+    transform: translateY(-2px);
 }
 
+       
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 15px;
+        
+}
+        
+/* ===== Hero ===== */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #1a0033, #0d001a);
+    text-align:center;
+    padding:50px 20px;
+    background:linear-gradient(to bottom,#1a0033,#0d001a);
 }
 
 .hero h1 {
-    font-size: 3rem;
-    color: #9b8cff;
+    font-size:3rem;
+    color:#9b8cff;
+    margin:0;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    color: #ccc;
+/* ===== Tabs ===== */
+.tabs {
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    margin:30px 0;
 }
 
-/* Cards dos planos */
+.tab {
+    cursor:pointer;
+    padding:10px 15px;
+    font-size:1.2rem;
+    color:#ccc;
+    position:relative;
+    transition:color 0.3s;
+}
+
+.tab:hover { color:#9b8cff; }
+
+.tab.active {
+    color:#fff;
+    font-weight:bold;
+}
+
+.tab.active::after {
+    content:'';
+    display:block;
+    height:3px;
+    background:#9b8cff;
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    right:0;
+    box-shadow:0 0 10px #9b8cff;
+}
+
+/* ===== Planos Containers ===== */
 .planos-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 30px 10px;
-    gap: 20px;
+    display: none; /* por padrão escondido */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px 40px;
+    align-items: stretch;
+    padding-bottom: 80px; /* espaço para footer */
 }
 
+.planos-container.active { display: grid; } /* container ativo aparece */
+
+/* ===== Cards dos Planos ===== */
 .plano-card {
-    background: #1a0026;
-    border: 2px solid #4b4fff;
-    border-radius: 15px;
-    width: 250px;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 0 15px #2e0a6f;
-    transition: 0.3s;
+    background:#1a0026;
+    border:2px solid #4b4fff;
+    border-radius:15px;
+    text-align:center;
+    padding:25px 20px;
+    box-shadow:0 0 15px #2e0a6f;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height:100%;
 }
 
 .plano-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #4b4fff,0 0 50px #4b4fff;
 }
 
 .plano-card h2 {
-    color: #4b4fff;
-    margin-bottom: 10px;
+    color:#4b4fff;
+    margin-bottom:10px;
+    font-size:1.5rem;
 }
 
 .plano-card .preco {
-    font-size: 2rem;
-    margin: 10px 0;
-    color: #fff;
-    font-weight: bold;
+    font-size:2rem;
+    margin:15px 0;
+    color:#fff;
+    font-weight:bold;
 }
 
 .plano-card ul {
-    list-style: none;
-    padding: 0;
-    color: #ccc;
-    text-align: left;
+    list-style:none;
+    padding:0;
+    margin:0 0 15px;
+    color:#ccc;
+    text-align:left;
+    font-size:0.9rem;
 }
 
-.plano-card ul li::before {
-    content: "• ";
-    color: #4b4fff;
+.plano-card ul li {
+    margin:6px 0;
 }
 
-.plano-card .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+.plano-card ul li::before { content:"• "; color:#4b4fff; }
+
+/* ===== Botões ===== */
+.btn {
+    display:inline-block;
+    padding:10px 20px;
+    color:#fff;
+    background-color:#4b4fff;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+    box-shadow:0 0 8px #4b4fff;
+    cursor:pointer;
+}
+
+.btn:hover { background-color:#6c6cff; box-shadow:0 0 15px #6c6cff; }
+
+/* ===== Footer ===== */
+footer {
+    text-align:center;
+    padding:15px;
+    background:#1a0033;
+    color:#ccc;
+    margin-top:auto;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative; /* necessário para o X ficar dentro */
+    background: #1a0026;
+    padding: 40px 30px 30px 30px; /* mais espaço no topo para o X */
+    border-radius: 15px;
+    width: 100%;
+    max-width: 700px;
     color: #fff;
-    background-color: #4b4fff;
-    border-radius: 10px;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 0 0 25px #4b4fff;
+}
+
+/* Botão fechar X */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
     transition: 0.3s;
 }
-
-.plano-card .btn:hover {
-    background-color: #6c6cff;
+.close:hover {
+    color: #9b8cff;
 }
 
-/* Footer */
-footer {
-    text-align: center;
+/* Informações do Plano */
+#modalTitulo { color: #9b8cff; font-size: 1.8rem; text-align: center; margin: 0; }
+#modalPreco { font-size: 1.5rem; text-align: center; color: #fff; font-weight: bold; }
+#modalDescricao { list-style: none; padding: 0; margin: 15px 0; color: #ccc; }
+#modalDescricao li { margin: 5px 0; padding-left: 10px; position: relative; }
+#modalDescricao li::before {
+    content: "•";
+    color: #4b4fff;
+    position: absolute;
+    left: 0;
+}
+
+/* Formulário de Inscrição */
+#modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #2e003e;
     padding: 20px;
-    background: #1a0033;
-    color: #ccc;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #4b4fff;
 }
-s
+
+#modalForm h3 {
+    color: #9b8cff;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+#modalForm input, #modalForm select {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#modalForm input:focus, #modalForm select:focus {
+    outline: 2px solid #4b4fff;
+    background: #2b002f;
+    color: #fff;
+}
+
+#cartaoInfo input {
+    display: block;
+    margin-top: 5px;
+}
+
+#modalForm button {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #4b4fff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+#modalForm button:hover {
+    background-color: #6c6cff;
+    box-shadow: 0 0 15px #6c6cff;
+}
+
+/* Responsividade */
+@media(max-width: 768px) {
+    .modal-content {
+        padding: 30px 20px 20px 20px;
+    }
+}

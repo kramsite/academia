@@ -11,7 +11,14 @@
     <div class="login-container">
         <div class="login-box">
             <h1>Login</h1>
-            <form action="#" method="POST">
+            <?php
+            if (isset($_SESSION["erro_login"])) {
+                echo "<p style='color:red; text-align:center;'>".$_SESSION["erro_login"]."</p>";
+                unset($_SESSION["erro_login"]);
+            }
+            ?>
+
+            <form action="processa_login.php" method="POST" autocomplete="off">
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>

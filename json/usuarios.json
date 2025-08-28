@@ -2,23 +2,12 @@
     {
         "nome": "Rafaella Gomes",
         "email": "Rafaella@gmail.com",
-        "senha": "$2y$10$bgrPr7ml6xAe2bhKdqsB2e\/tc5eMw63uAGunWbgoZh\/3X2ffD\/FNi",
+        "senha": "$2y$10$HBHCzJXnKP5r.Kq5wUTIj.es5swbqmK50aD2P0VeuaQhhLtqyeN3O",
         "sexo": "feminino",
         "cpf": "092.976.821-38",
-        "cep": "00388-021",
-        "endereco": "Rua J",
+        "cep": "00338-811",
+        "endereco": "Rua X",
         "celular": "(65) 99313-7382",
-        "nascimento": "2008-09-22"
-    },
-    {
-        "nome": "Rafaella Deus",
-        "email": "Rafaa@gmail.com",
-        "senha": "$2y$10$twfZ7nhFLphPTGtRt9clz.oVptSB\/\/uBWaXLNdq2ltfL3fwsP0eWG",
-        "sexo": "feminino",
-        "cpf": "092.966.666-66",
-        "cep": "33333-333",
-        "endereco": "Rua J",
-        "celular": "(09) 99999-9999",
         "nascimento": "2008-09-22"
     }
 ]

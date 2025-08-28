@@ -1,33 +1,39 @@
 [
   {
     "nome": "BÁSICO",
-    "preco": 300,
+    "preco": 250,
     "descricao": [
-      "Plano de treinos personalizado para iniciantes",
+      "Plano de treinos para iniciantes",
       "Acesso ilimitado à academia",
       "Suporte online via chat",
-      "Avaliação física inicial e acompanhamento mensal"
-    ]
+      "Avaliação física inicial",
+      "Participação em 1 turma à escolha (diversas modalidades)"
+    ],
+    "tipo": "sem"
   },
   {
-    "nome": "PREMIUM",
-    "preco": 500,
+    "nome": "EVOLUÇÃO",
+    "preco": 350,
     "descricao": [
-      "Treinos adaptados para ganho de massa e resistência",
-      "Consultoria quinzenal com personal trainer",
-      "Acesso a aulas em grupo (yoga, pilates, etc.)",
-      "Suporte via chat e videochamada"
-    ]
+      "Treinos progressivos para ganho de força e resistência",
+      "Acesso ilimitado à academia",
+      "Participação em 2 turmas à escolha (diversas modalidades)",
+      "Acompanhamento físico quinzenal",
+      "Suporte online via chat e e-mail"
+    ],
+    "tipo": "sem"
   },
   {
-    "nome": "VIP",
-    "preco": 800,
+    "nome": "PERFORMANCE",
+    "preco": 450,
     "descricao": [
-      "Treinos 100% personalizados e acompanhamento diário",
-      "Sessões exclusivas com personal trainer",
-      "Acesso VIP a todas as áreas",
-      "Consultoria nutricional e avaliações físicas completas"
-    ]
+      "Treinos avançados para definição muscular",
+      "Acesso ilimitado à academia",
+      "Participação em 3 turmas à escolha (diversas modalidades)",
+      "Avaliação física mensal e ajustes no treino",
+      "Suporte online via chat e vídeo"
+    ],
+    "tipo": "sem"
   },
   {
     "nome": "FAMILIAR",
@@ -35,8 +41,57 @@
     "descricao": [
       "Planos customizados para toda a família",
       "Acesso a todas as áreas e atividades da academia",
-      "Descontos para pacotes de personal trainer",
+      "Participação ilimitada em turmas (diversas modalidades)",
+      "Descontos em pacotes de personal trainer",
       "Acompanhamento especial para idosos"
-    ]
+    ],
+    "tipo": "sem"
+  },
+  {
+    "nome": "PREMIUM",
+    "preco": 500,
+    "descricao": [
+      "Treinos adaptados para ganho de massa e resistência",
+      "Consultoria quinzenal com personal trainer",
+      "Participação em 2 turmas à escolha (diversas modalidades)",
+      "Suporte via chat e videochamada"
+    ],
+    "tipo": "com"
+  },
+  {
+    "nome": "VIP",
+    "preco": 800,
+    "descricao": [
+      "Treinos 100% personalizados e acompanhamento diário",
+      "Sessões exclusivas com personal trainer",
+      "Participação em 3 turmas à escolha (diversas modalidades)",
+      "Consultoria nutricional e avaliações físicas completas"
+    ],
+    "tipo": "com"
+  },
+  {
+    "nome": "ELITE",
+    "preco": 1000,
+    "descricao": [
+      "Treinos totalmente personalizados com foco em alta performance",
+      "Sessões semanais com personal trainer dedicado",
+      "Participação em 4 turmas à escolha (diversas modalidades)",
+      "Consultoria nutricional avançada",
+      "Acesso completo a todas as áreas e eventos da academia"
+    ],
+    "tipo": "com"
+  },
+  {
+    "nome": "MASTER",
+    "preco": 1300,
+    "descricao": [
+      "Treinos premium com acompanhamento diário e ajustes constantes",
+      "Sessões ilimitadas com personal trainer",
+      "Participação ilimitada em turmas (todas as modalidades)",
+      "Consultoria completa de nutrição e suplementação",
+      "Avaliações físicas e mentais periódicas",
+      "Acesso VIP a todas as áreas e eventos exclusivos"
+    ],
+    "tipo": "com"
   }
 ]

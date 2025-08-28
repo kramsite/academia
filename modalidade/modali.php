@@ -4,627 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academia  - Modalidades</title>
+    <link rel="stylesheet" href="modali.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background-color: #0d0d0d; /* preto mais profundo */
-            color: #fff;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: linear-gradient(90deg, #2e0a6f, #1a0033); /* roxo frio */
-            box-shadow: 0 0 15px #2e0a6f;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo {
-            font-size: 2rem;
-            letter-spacing: 2px;
-            color: #9b8cff; /* roxo frio claro */
-            text-shadow: 0 0 10px #9b8cff;
-            font-weight: 800;
-        }
-        
-        .logo span {
-            color: #4b4fff;
-            font-weight: 900;
-            text-shadow: 0 0 15px #4b4fff;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #ccc;
-            font-weight: bold;
-            transition: 0.3s;
-            position: relative;
-            padding: 0.6rem 1rem;
-            border-radius: 6px;
-            font-size: 1.05rem;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #9b8cff;
-            bottom: -4px;
-            left: 0;
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        nav ul li a:hover {
-            color: #9b8cff;
-            transform: translateY(-2px);
-        }
-        
-        /* Banner */
-        .banner {
-            background: linear-gradient(rgba(13, 0, 26, 0.85), rgba(13, 0, 26, 0.9)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 6rem 1.5rem;
-            margin-bottom: 3rem;
-            border-radius: 0 0 20px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .banner::before {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            box-shadow: 0 0 60px #4b4fff, 0 0 120px #4b4fff;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            animation: pulse 3s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-        }
-        
-        .banner h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.2rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-            letter-spacing: 0.5px;
-            color: #9b8cff;
-            text-shadow: 0 0 15px #9b8cff, 0 0 30px #4b4fff;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .banner p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-            color: #aaa;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Modalidades */
-        .modalidades {
-            padding: 4rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #9b8cff;
-            position: relative;
-            padding-bottom: 1rem;
-            font-weight: 800;
-            text-shadow: 0 0 10px #9b8cff;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 5px;
-            background: linear-gradient(90deg, #4b4fff, #9b8cff);
-            border-radius: 3px;
-            box-shadow: 0 0 10px #4b4fff;
-        }
-        
-        .grid-modalidades {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .card-modalidade {
-            background: #1a0026;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(43, 10, 111, 0.3);
-            transition: all 0.4s ease;
-            border: 1px solid #4b4fff;
-        }
-        
-        .card-modalidade:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 18px 35px rgba(75, 79, 255, 0.4), 0 0 30px #4b4fff;
-        }
-        
-        .card-imagem {
-            height: 220px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .card-imagem img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-        
-        .card-modalidade:hover .card-imagem img {
-            transform: scale(1.15);
-        }
-        
-        .card-conteudo {
-            padding: 2rem;
-        }
-        
-        .card-conteudo h3 {
-            font-size: 1.7rem;
-            margin-bottom: 1rem;
-            color: #9b8cff;
-            font-weight: 700;
-            text-shadow: 0 0 8px #9b8cff;
-        }
-        
-        .card-conteudo p {
-            margin-bottom: 1.5rem;
-            color: #ccc;
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-        
-        .horarios {
-            margin-bottom: 2rem;
-            background: rgba(27, 0, 51, 0.5);
-            padding: 1.2rem;
-            border-radius: 10px;
-            border-left: 4px solid #4b4fff;
-        }
-        
-        .horarios h4 {
-            font-size: 1.15rem;
-            margin-bottom: 0.8rem;
-            color: #9b8cff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .horarios h4 i {
-            color: #4b4fff;
-        }
-        
-        .horarios ul {
-            list-style: none;
-        }
-        
-        .horarios ul li {
-            padding: 0.4rem 0;
-            font-size: 1rem;
-            border-bottom: 1px dashed #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #ccc;
-        }
-        
-        .horarios ul li:last-child {
-            border-bottom: none;
-        }
-        
-        .horarios ul li i {
-            color: #4b4fff;
-            font-size: 0.9rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #4b4fff, #2e0a6f);
-            color: white;
-            padding: 0.9rem 1.8rem;
-            text-decoration: none;
-            border-radius: 35px;
-            font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(75, 79, 255, 0.35);
-            cursor: pointer;
-            border: none;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            width: 100%;
-            text-align: center;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .btn:hover {
-            background: linear-gradient(90deg, #2e0a6f, #4b4fff);
-            box-shadow: 0 8px 20px rgba(75, 79, 255, 0.6), 0 0 20px #4b4fff;
-            transform: translateY(-3px);
-        }
-        
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(13, 0, 26, 0.95);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 25px;
-        }
-        
-        .modal-conteudo {
-            background-color: #1a0026;
-            margin: 2.5rem auto;
-            border-radius: 15px;
-            max-width: 900px;
-            box-shadow: 0 10px 35px rgba(75, 79, 255, 0.3);
-            animation: modalFadeIn 0.5s;
-            overflow: hidden;
-            border: 1px solid #4b4fff;
-        }
-        
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-60px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .modal-header {
-            padding: 2rem;
-            background: linear-gradient(90deg, #4b4fff, #2e0a6f);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .modal-header h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        
-        .fechar {
-            color: white;
-            font-size: 2.2rem;
-            cursor: pointer;
-            transition: color 0.3s;
-            font-weight: bold;
-            padding: 0 10px;
-        }
-        
-        .fechar:hover {
-            color: #9b8cff;
-            transform: scale(1.2);
-        }
-        
-        .modal-body {
-            padding: 2.5rem;
-        }
-        
-        .modal-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
-        
-        .modal-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.2rem;
-            color: #9b8cff;
-            border-bottom: 3px solid #4b4fff;
-            padding-bottom: 0.7rem;
-            font-weight: 700;
-            text-shadow: 0 0 8px #9b8cff;
-        }
-        
-        .info-box {
-            background-color: rgba(27, 0, 51, 0.5);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 5px solid #4b4fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .info-box ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .info-box ul li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ccc;
-        }
-        
-        .info-box ul li i {
-            color: #4b4fff;
-            font-size: 1.1rem;
-        }
-        
-        .professor {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            background: rgba(27, 0, 51, 0.3);
-            padding: 1.2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border: 1px solid #333;
-        }
-        
-        .professor img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1.5rem;
-            border: 3px solid #4b4fff;
-            box-shadow: 0 0 10px #4b4fff;
-        }
-        
-        .professor-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-            color: #9b8cff;
-        }
-        
-        .professor-info p {
-            font-size: 1rem;
-            color: #ccc;
-        }
-        
-        /* Formulário */
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.7rem;
-            font-weight: 600;
-            color: #9b8cff;
-            font-size: 1.1rem;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #333;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            transition: all 0.3s;
-            background-color: rgba(27, 0, 51, 0.3);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4b4fff;
-            box-shadow: 0 0 0 3px rgba(75, 79, 255, 0.2), 0 0 10px #4b4fff;
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        
-        /* CTA */
-        .cta {
-            background: linear-gradient(135deg, #2e0a6f, #1a0033);
-            color: white;
-            text-align: center;
-            padding: 5rem 0;
-            margin-top: 4rem;
-            border-radius: 20px 20px 0 0;
-            border-top: 1px solid #4b4fff;
-            box-shadow: 0 0 20px #2e0a6f;
-        }
-        
-        .cta h2 {
-            font-size: 2.3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            color: #9b8cff;
-            text-shadow: 0 0 15px #9b8cff;
-        }
-        
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: #ccc;
-        }
-        
-        .btn-grande {
-            padding: 1.2rem 2.5rem;
-            font-size: 1.2rem;
-            background: linear-gradient(90deg, #1a0033, #2e0a6f);
-            box-shadow: 0 0 20px #2e0a6f;
-        }
-        
-        .btn-grande:hover {
-            background: linear-gradient(90deg, #2e0a6f, #1a0033);
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px #4b4fff, 0 0 60px #4b4fff;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #0d001a;
-            color: #666;
-            text-align: center;
-            padding: 2.5rem 0;
-            border-top: 1px solid #2e0a6f;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .modal-info {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-                padding: 15px;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-            }
-            
-            nav ul li {
-                margin: 0;
-            }
-            
-            .banner h2 {
-                font-size: 2.2rem;
-            }
-            
-            .banner p {
-                font-size: 1.1rem;
-            }
-            
-            .grid-modalidades {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .modal-body {
-                padding: 1.5rem;
-            }
-            
-            .modal-header {
-                padding: 1.5rem;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .professor {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .professor img {
-                margin-right: 0;
-            }
-            
-            .banner {
-                padding: 4rem 1rem;
-            }
-            
-            .banner::before {
-                width: 150px;
-                height: 150px;
-            }
-        }
+       
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Academy <span>Vortex</span></div>
+        <div class="logo">Vortex</div>
         <nav>
             <ul>
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-dumbbell"></i> Modalidades</a></li>
-                <li><a href="#"><i class="fas fa-tag"></i> Planos</a></li>
-                <li><a href="#"><i class="fas fa-phone"></i> Contato</a></li>
+                <li><a href="../inicio/inicio.php">Home <i class="fas fa-home"></i> </a></li>
+                <li><a href="../plano/plano.php">Planos <i class="fas fa-tag"></i> </a></li>
+                <li><a href="../prof/prof.php">Professores <i class="fas fa-chalkboard-teacher"></i> </a></li>
+                <li><a href="../quiz/quiz.php">Quiz <i class="fas fa-question"></i></a></li>
+
             </ul>
         </nav>
     </header>
@@ -641,66 +37,169 @@
             <h2 class="section-title">Nossas Modalidades</h2>
             <div class="grid-modalidades">
                 <!-- Yoga -->
-                <div class="card-modalidade">
-                    <div class="card-imagem">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Yoga">
-                    </div>
-                    <div class="card-conteudo">
-                        <h3>Yoga</h3>
-                        <p>Prática que combina posturas físicas, exercícios respiratórios e meditação para melhorar o bem-estar geral e a flexibilidade.</p>
-                        <div class="horarios">
-                            <h4><i class="far fa-clock"></i> Horários:</h4>
-                            <ul>
-                                <li><i class="far fa-calendar-alt"></i> Segunda e Quarta - 8h às 9h</li>
-                                <li><i class="far fa-calendar-alt"></i> Terça e Quinta - 18h às 19h</li>
-                                <li><i class="far fa-calendar-alt"></i> Sábado - 9h às 10h</li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-modal" data-modal="modal-yoga">Saiba mais e inscreva-se</button>
-                    </div>
-                </div>
-                
-                <!-- Pilates -->
-                <div class="card-modalidade">
-                    <div class="card-imagem">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pilates">
-                    </div>
-                    <div class="card-conteudo">
-                        <h3>Pilates</h3>
-                        <p>Método de exercício físico que se foca no controle dos músculos do core, melhorando a postura, flexibilidade e força muscular.</p>
-                        <div class="horarios">
-                            <h4><i class="far fa-clock"></i> Horários:</h4>
-                            <ul>
-                                <li><i class="far fa-calendar-alt"></i> Segunda e Quarta - 10h às 11h</li>
-                                <li><i class="far fa-calendar-alt"></i> Terça e Quinta - 19h às 20h</li>
-                                <li><i class="far fa-calendar-alt"></i> Sexta - 9h às 10h</li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-modal" data-modal="modal-pilates">Saiba mais e inscreva-se</button>
-                    </div>
-                </div>
-                
-                <!-- Musculação -->
-                <div class="card-modalidade">
-                    <div class="card-imagem">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Musculação">
-                    </div>
-                    <div class="card-conteudo">
-                        <h3>Musculação</h3>
-                        <p>Atividade física voltada para o ganho de massa muscular e força, com equipamentos de última geração e acompanhamento profissional.</p>
-                        <div class="horarios">
-                            <h4><i class="far fa-clock"></i> Horários:</h4>
-                            <ul>
-                                <li><i class="far fa-calendar-alt"></i> Segunda a Sexta - 6h às 22h</li>
-                                <li><i class="far fa-calendar-alt"></i> Sábado - 8h às 12h</li>
-                                <li><i class="far fa-calendar-alt"></i> Domingo - 9h às 11h</li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-modal" data-modal="modal-musculacao">Saiba mais e inscreva-se</button>
-                    </div>
-                </div>
-            </div>
+                <!-- Body Balance -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/3822356/pexels-photo-3822356.jpeg" alt="Body Balance">
+    </div>
+    <div class="card-conteudo">
+        <h3>Body Balance</h3>
+        <p>Combinação de Yoga, Pilates e Tai Chi, melhora flexibilidade, equilíbrio e força.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Ter e Qui - 7h às 8h</li>
+            </ul>
         </div>
+        <button class="btn btn-modal" data-modal="modal-bodybalance">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Boxe -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://cdn-blog.superprof.com/blog_gb/wp-content/uploads/2018/05/Boxing-fitness-class.jpg" alt="Boxe">
+    </div>
+    <div class="card-conteudo">
+        <h3>Boxe</h3>
+        <p>Treino cardiovascular e de força, desenvolve reflexos e resistência física.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Seg, Qua e Sex - 19h às 20h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-boxe">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Bump -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg" alt="Bump">
+    </div>
+    <div class="card-conteudo">
+        <h3>Bump</h3>
+        <p>Treino de alta intensidade com música, mistura cardio e força para queimar calorias.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Seg e Qua - 18h às 19h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-bump">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Dança -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/1701207/pexels-photo-1701207.jpeg" alt="Dança">
+    </div>
+    <div class="card-conteudo">
+        <h3>Dança</h3>
+        <p>Exercício divertido que melhora coordenação, ritmo e condicionamento físico.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Ter e Qui - 19h às 20h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-danca">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Funcional -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/2261485/pexels-photo-2261485.jpeg" alt="Funcional">
+    </div>
+    <div class="card-conteudo">
+        <h3>Funcional</h3>
+        <p>Treinamento que combina força, resistência, agilidade e coordenação.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Seg, Qua e Sex - 7h às 8h</li>
+                <li><i class="far fa-calendar-alt"></i> Ter e Qui - 18h às 19h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-funcional">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Musculação -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg" alt="Musculação">
+    </div>
+    <div class="card-conteudo">
+        <h3>Musculação</h3>
+        <p>Treino de força e hipertrofia, melhora da resistência e composição corporal.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Seg a Sex - 6h às 22h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-musculacao">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Pilates -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg" alt="Pilates">
+    </div>
+    <div class="card-conteudo">
+        <h3>Pilates</h3>
+        <p>Fortalecimento muscular, alongamento e postura correta, ideal para prevenção de lesões.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Ter e Qui - 18h às 19h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-pilates">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Spinning -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://ride.shimano.com/cdn/shop/articles/7-Tips-to-help-you-get-started-with-indoor-cycling-thumbnail.jpg?v=1744916969" alt="Spinning">
+    </div>
+    <div class="card-conteudo">
+        <h3>Spinning</h3>
+        <p>Treino intenso de bicicleta ergométrica, melhora condicionamento cardiovascular e queima de calorias.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Seg, Qua e Sex - 6h às 7h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-spinning">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
+<!-- Yoga -->
+<div class="card-modalidade">
+    <div class="card-imagem">
+        <img src="https://images.pexels.com/photos/8436587/pexels-photo-8436587.jpeg" alt="Yoga">
+    </div>
+    <div class="card-conteudo">
+        <h3>Yoga</h3>
+        <p>Equilíbrio entre corpo e mente, melhora a flexibilidade, força e concentração.</p>
+        <div class="horarios">
+            <h4><i class="far fa-clock"></i> Horários:</h4>
+            <ul>
+                <li><i class="far fa-calendar-alt"></i> Seg, Qua e Sex - 7h às 8h</li>
+            </ul>
+        </div>
+        <button class="btn btn-modal" data-modal="modal-yoga">Saiba mais e inscreva-se</button>
+    </div>
+</div>
+
     </section>
 
     <!-- Modal Yoga -->
@@ -995,13 +494,360 @@
         </div>
     </div>
 
-    <section class="cta">
-        <div class="container">
-            <h2>Pronto para começar sua transformação?</h2>
-            <p>Agende uma aula experimental gratuita e descubra qual modalidade combina mais com você. Nossos instrutores estão prontos para te ajudar a alcançar seus objetivos!</p>
-            <a href="#" class="btn btn-grande"><i class="fas fa-calendar-check"></i> Agendar Aula Experimental</a>
+    <!-- Modal Funcional -->
+<div id="modal-funcional" class="modal">
+    <div class="modal-conteudo">
+        <div class="modal-header">
+            <h2><i class="fas fa-dumbbell"></i> Funcional</h2>
+            <span class="fechar">&times;</span>
         </div>
-    </section>
+        <div class="modal-body">
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3>Descrição</h3>
+                    <p>O Treinamento Funcional combina força, resistência, agilidade e coordenação, promovendo melhora do condicionamento físico geral e maior equilíbrio corporal.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Aumento da força e resistência</li>
+                        <li><i class="fas fa-check-circle"></i> Melhora do equilíbrio e coordenação</li>
+                        <li><i class="fas fa-check-circle"></i> Queima calórica eficiente</li>
+                        <li><i class="fas fa-check-circle"></i> Prevenção de lesões</li>
+                        <li><i class="fas fa-check-circle"></i> Melhora do condicionamento cardiovascular</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3><i class="far fa-clock"></i> Horários e Locais</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Segunda, Quarta e Sexta</strong> - 7h às 8h (Sala Funcional - Unidade Centro)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Terça e Quinta</strong> - 18h às 19h (Sala Funcional - Unidade Centro)</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Professores</h3>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1584466977773-0a94b9e8db41?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professor">
+                        <div class="professor-info">
+                            <h4>Lucas Ferreira</h4>
+                            <p>Instrutor de Funcional com 6 anos de experiência, especialista em treinamento de alta intensidade.</p>
+                        </div>
+                    </div>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1603415526960-f0b2f7dc0a32?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professora">
+                        <div class="professor-info">
+                            <h4>Carla Mendes</h4>
+                            <p>Especialista em funcional e preparação física, com foco em resistência e mobilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3><i class="fas fa-edit"></i> Inscreva-se na Aula Experimental</h3>
+            <form id="form-funcional">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome-funcional">Nome completo</label>
+                        <input type="text" id="nome-funcional" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-funcional">E-mail</label>
+                        <input type="email" id="email-funcional" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="telefone-funcional">Telefone</label>
+                        <input type="tel" id="telefone-funcional" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario-funcional">Horário preferido</label>
+                        <select id="horario-funcional" name="horario" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="seg-quar-sex-7h">Seg, Qua e Sex - 7h às 8h</option>
+                            <option value="ter-quinta-18h">Ter e Qui - 18h às 19h</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observacao-funcional">Observações</label>
+                    <textarea id="observacao-funcional" name="observacao" rows="3" placeholder="Informe se possui alguma condição de saúde ou limitação física"></textarea>
+                </div>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Inscrição</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Dança -->
+<div id="modal-danca" class="modal">
+    <div class="modal-conteudo">
+        <div class="modal-header">
+            <h2><i class="fas fa-music"></i> Dança</h2>
+            <span class="fechar">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3>Descrição</h3>
+                    <p>Aulas de dança que combinam movimento, ritmo e coordenação, promovendo diversão, expressão corporal e bem-estar físico e emocional.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Melhora da coordenação e ritmo</li>
+                        <li><i class="fas fa-check-circle"></i> Aumento da flexibilidade</li>
+                        <li><i class="fas fa-check-circle"></i> Desenvolvimento da autoestima</li>
+                        <li><i class="fas fa-check-circle"></i> Condicionamento físico e cardiovascular</li>
+                        <li><i class="fas fa-check-circle"></i> Redução do estresse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3><i class="far fa-clock"></i> Horários e Locais</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Segunda e Quarta</strong> - 19h às 20h (Sala de Dança - Unidade Centro)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Sábado</strong> - 10h às 11h (Sala de Dança - Unidade Jardins)</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Professores</h3>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professora">
+                        <div class="professor-info">
+                            <h4>Fernanda Costa</h4>
+                            <p>Instrutora de Dança com experiência em Jazz, Zumba e Danças Urbanas.</p>
+                        </div>
+                    </div>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professor">
+                        <div class="professor-info">
+                            <h4>Thiago Lima</h4>
+                            <p>Especialista em Dança Contemporânea e coreografia para todos os níveis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3><i class="fas fa-edit"></i> Inscreva-se na Aula Experimental</h3>
+            <form id="form-danca">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome-danca">Nome completo</label>
+                        <input type="text" id="nome-danca" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-danca">E-mail</label>
+                        <input type="email" id="email-danca" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="telefone-danca">Telefone</label>
+                        <input type="tel" id="telefone-danca" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario-danca">Horário preferido</label>
+                        <select id="horario-danca" name="horario" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="seg-quar-19h">Seg e Qua - 19h às 20h</option>
+                            <option value="sab-10h">Sábado - 10h às 11h</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observacao-danca">Observações</label>
+                    <textarea id="observacao-danca" name="observacao" rows="3" placeholder="Informe se possui alguma condição de saúde ou limitação física"></textarea>
+                </div>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Inscrição</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Boxe -->
+<div id="modal-boxe" class="modal">
+    <div class="modal-conteudo">
+        <div class="modal-header">
+            <h2><i class="fas fa-hand-rock"></i> Boxe</h2>
+            <span class="fechar">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3>Descrição</h3>
+                    <p>Aulas de Boxe que combinam técnicas de luta, condicionamento físico e força, ajudando a desenvolver agilidade, coordenação e disciplina.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Melhora da força e resistência</li>
+                        <li><i class="fas fa-check-circle"></i> Aumento da coordenação motora</li>
+                        <li><i class="fas fa-check-circle"></i> Redução de estresse e ansiedade</li>
+                        <li><i class="fas fa-check-circle"></i> Condicionamento físico geral</li>
+                        <li><i class="fas fa-check-circle"></i> Desenvolvimento da disciplina</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3><i class="far fa-clock"></i> Horários e Locais</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Terça e Quinta</strong> - 20h às 21h (Sala de Boxe - Unidade Centro)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Sábado</strong> - 11h às 12h (Sala de Boxe - Unidade Jardins)</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Professores</h3>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1595433562696-8f08a9c36b0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professor">
+                        <div class="professor-info">
+                            <h4>Rafael Santos</h4>
+                            <p>Instrutor de Boxe com experiência em treinos competitivos e condicionamento físico.</p>
+                        </div>
+                    </div>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1595433561795-7d38a8f4f91e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professora">
+                        <div class="professor-info">
+                            <h4>Paula Ribeiro</h4>
+                            <p>Especialista em Boxe Fitness, focada em técnicas de defesa pessoal e resistência.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3><i class="fas fa-edit"></i> Inscreva-se na Aula Experimental</h3>
+            <form id="form-boxe">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome-boxe">Nome completo</label>
+                        <input type="text" id="nome-boxe" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-boxe">E-mail</label>
+                        <input type="email" id="email-boxe" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="telefone-boxe">Telefone</label>
+                        <input type="tel" id="telefone-boxe" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario-boxe">Horário preferido</label>
+                        <select id="horario-boxe" name="horario" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="ter-quinta-20h">Ter e Qui - 20h às 21h</option>
+                            <option value="sab-11h">Sábado - 11h às 12h</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observacao-boxe">Observações</label>
+                    <textarea id="observacao-boxe" name="observacao" rows="3" placeholder="Informe se possui alguma condição de saúde ou limitação física"></textarea>
+                </div>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Inscrição</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Spinning -->
+<div id="modal-spinning" class="modal">
+    <div class="modal-conteudo">
+        <div class="modal-header">
+            <h2><i class="fas fa-bicycle"></i> Spinning</h2>
+            <span class="fechar">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3>Descrição</h3>
+                    <p>Aula de ciclismo indoor que melhora resistência cardiovascular, força das pernas e queima calórica intensa, com música motivadora e ritmo constante.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Benefícios</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Melhora do condicionamento cardiovascular</li>
+                        <li><i class="fas fa-check-circle"></i> Queima calórica intensa</li>
+                        <li><i class="fas fa-check-circle"></i> Fortalecimento de pernas e glúteos</li>
+                        <li><i class="fas fa-check-circle"></i> Aumento da resistência e energia</li>
+                        <li><i class="fas fa-check-circle"></i> Redução do estresse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <div class="info-box">
+                    <h3><i class="far fa-clock"></i> Horários e Locais</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Segunda, Quarta e Sexta</strong> - 6h às 7h (Sala Spinning - Unidade Centro)</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Terça e Quinta</strong> - 19h às 20h (Sala Spinning - Unidade Centro)</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Professores</h3>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professor">
+                        <div class="professor-info">
+                            <h4>Vinicius Oliveira</h4>
+                            <p>Instrutor de Spinning com experiência em treinos de alta intensidade e resistência.</p>
+                        </div>
+                    </div>
+                    <div class="professor">
+                        <img src="https://images.unsplash.com/photo-1587502536263-2b6c71eb0c4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Professora">
+                        <div class="professor-info">
+                            <h4>Isabela Martins</h4>
+                            <p>Especialista em Spinning e treino cardiovascular, focada em motivação e performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3><i class="fas fa-edit"></i> Inscreva-se na Aula Experimental</h3>
+            <form id="form-spinning">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome-spinning">Nome completo</label>
+                        <input type="text" id="nome-spinning" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-spinning">E-mail</label>
+                        <input type="email" id="email-spinning" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="telefone-spinning">Telefone</label>
+                        <input type="tel" id="telefone-spinning" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario-spinning">Horário preferido</label>
+                        <select id="horario-spinning" name="horario" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="seg-quar-sex-6h">Seg, Qua e Sex - 6h às 7h</option>
+                            <option value="ter-quinta-19h">Ter e Qui - 19h às 20h</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="observacao-spinning">Observações</label>
+                    <textarea id="observacao-spinning" name="observacao" rows="3" placeholder="Informe se possui alguma condição de saúde ou limitação física"></textarea>
+                </div>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Inscrição</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    
 
     <footer>
         <div class="container">

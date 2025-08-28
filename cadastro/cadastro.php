@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if($mensagem): ?>
             <p class="mensagem"><?php echo $mensagem; ?></p>
         <?php endif; ?>
-        <form id="cadastroForm" action="" method="POST" novalidate>
+        <form id="cadastroForm" action="" method="POST" novalidate autocomplete="off">
             <div class="form-columns">
                 <!-- Coluna esquerda -->
                 <div class="column">

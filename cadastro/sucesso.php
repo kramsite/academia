@@ -70,7 +70,7 @@
       contador.textContent = tempo;
       if (tempo <= 0) {
         clearInterval(intervalo);
-        window.location.href = "../inicio/inicio.php";
+        window.location.href = "../login/login.php";
       }
     }, 1000);
   </script>

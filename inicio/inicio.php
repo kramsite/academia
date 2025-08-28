@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex Academy</title>
+    <title>Academia  - Modalidades</title>
     <link rel="stylesheet" href="inicio.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+       
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">Vortex</div>
         <nav>
             <ul>
-                <li><a href="#">Treinos</a></li>
-                <li><a href="#">Horários</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="../academia-chat/chat.php">chat</a></li>
-                <li><a href="../plano/plano.php">planos</a></li>
-                
+                <li><a href="../modalidade/modali.php">Modalidades <i class="fas fa-dumbbell"></i> </a></li>
+                <li><a href="../plano/plano.php">Planos <i class="fas fa-tag"></i> </a></li>
+                <li><a href="../prof/prof.php">Professores <i class="fas fa-chalkboard-teacher"></i> </a></li>
+                <li><a href="../quiz/quiz.php">Quiz <i class="fas fa-question"></i></a></li>
+
             </ul>
         </nav>
     </header>
@@ -26,7 +29,6 @@
         <div class="hero-content">
             <h1>Bem-vindo à Vortex</h1>
             <p>Transforme seu corpo. Supere seus limites.</p>
-            <a href="../login/login.php" class="btn">Comece Agora</a>
         </div>
     </section>
 
