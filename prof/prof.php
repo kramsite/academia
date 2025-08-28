@@ -91,7 +91,7 @@
                         <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Professora Rafaella">
                     </div>
                     <div class="card-conteudo">
-                        <h3>Rafaella Gomes</h3>
+                        <h3>Soraya Moraes</h3>
                         <span class="especialidade">Yoga e Meditação</span>
                         <div class="experiencia">
                             <i class="fas fa-calendar-alt"></i>
@@ -214,7 +214,7 @@
                 <!-- Professor 9 -->
                 <div class="card-professor" data-categoria="yoga">
                     <div class="card-imagem">
-                        <img src="https://preview.redd.it/sou-parda-e-q-nota-vcs-me-dariam-v0-z95picckk6fe1.jpg?width=640&crop=smart&auto=webp&s=7d279dc5df998febf0bdc30ba749cda81f5abfe1" alt="Professora Sofia">
+                        <img src="professor4.jpg" alt="Professora Sofia">
                     </div>
                     <div class="card-conteudo">
                         <h3>Sofia Rodrigues</h3>
@@ -319,7 +319,7 @@
                 <!-- Professor 14 -->
                 <div class="card-professor" data-categoria="musculacao">
                     <div class="card-imagem">
-                        <img src="https://pbs.twimg.com/media/EVA7xYxXkAAkQ7T.jpg" alt="Professor Thiago">
+                        <img src="professor5.jpg" alt="Professor Thiago">
                     </div>
                     <div class="card-conteudo">
                         <h3>Thiago Mendonça</h3>
